@@ -3,18 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "cross-env TINA_PUBLIC_IS_LOCAL=true tinacms dev -c \"next dev\"",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "next start"
   },
   "dependencies": {
+    "@tinacms/cli": "^2.1.11",
+    "cross-env": "^10.1.0",
     "framer-motion": "^12.38.0",
     "next": "14.2.35",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "tinacms": "^3.6.3"
   },
   "devDependencies": {
+    "@types/node": "^25.5.0",
+    "@types/react": "19.2.14",
     "eslint": "^8",
     "eslint-config-next": "14.2.35",
     "postcss": "^8",
