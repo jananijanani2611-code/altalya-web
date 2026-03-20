@@ -19,7 +19,7 @@ export default defineConfig({
       {
         name: "hero",
         label: "Hero Section",
-        path: "content/hero",
+        path: "content/posts/hero",
         format: "json",
         ui: {
           allowedActions: {
