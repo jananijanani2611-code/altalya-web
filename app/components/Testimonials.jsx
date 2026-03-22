@@ -10,22 +10,29 @@ const testimonials = [
   { name: "Divya Nair", role: "Software Engineer, Mumbai", text: "Great trainers, great content and great placement support. Worth every rupee spent." },
 ];
 
+const stars = "★★★★★";
+
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="bg-[#0f172a] py-20 px-6">
+    <section id="testimonials" className="bg-white py-20 px-6">
       <div className="max-w-7xl mx-auto">
-        <motion.h2
+
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-4xl font-bold text-white text-center mb-4"
+          className="text-center mb-16"
         >
-          Student <span className="text-sky-400">Reviews</span>
-        </motion.h2>
-        <p className="text-slate-400 text-center max-w-2xl mx-auto mb-16">
-          Real stories from real students who transformed their careers.
-        </p>
+          <h2 className="text-4xl font-bold text-slate-900 mb-4">
+          Student <span className="text-blue-600">Testimonials</span>
+          </h2>
+          <div className="w-16 h-1 bg-blue-600 mx-auto mb-4 rounded-full"></div>
+          <p className="text-slate-500 max-w-2xl mx-auto">
+            Real stories from real students who transformed their careers.
+          </p>
+        </motion.div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((item, index) => (
             <motion.div
@@ -34,21 +41,25 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-[#1e293b] rounded-2xl p-8 border border-[#334155]"
+              className="bg-slate-50 rounded-2xl p-8 border border-slate-200 hover:shadow-md hover:border-blue-200 transition"
             >
-              <p className="text-slate-400 mb-6 leading-relaxed">"{item.text}"</p>
+              <div className="text-yellow-400 text-lg mb-4">{stars}</div>
+              <p className="text-slate-600 mb-6 leading-relaxed italic">
+                "{item.text}"
+              </p>
               <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-sky-600 flex items-center justify-center text-white font-bold">
+                <div className="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-lg">
                   {item.name.charAt(0)}
                 </div>
                 <div>
-                  <h4 className="text-white font-bold">{item.name}</h4>
-                  <p className="text-slate-500 text-sm">{item.role}</p>
+                  <h4 className="text-slate-900 font-bold">{item.name}</h4>
+                  <p className="text-slate-400 text-sm">{item.role}</p>
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
+
       </div>
     </section>
   );
